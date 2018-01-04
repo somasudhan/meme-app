@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import * as $ from 'jquery';
 
 @Component({
@@ -6,11 +6,18 @@ import * as $ from 'jquery';
   templateUrl: './gallery.component.html',
   styleUrls: ['./gallery.component.css']
 })
-export class GalleryComponent implements OnInit {
-
+export class GalleryComponent implements AfterViewInit {
+  allMemes: {name: string, url: string }[] = [
+  	{'name': 'mountain', 'url': 'assets/memes/meme_1.jpg'},
+  	{'name': 'mountain', 'url': 'assets/memes/meme_2.jpg'},
+  	{'name': 'mountain', 'url': 'assets/memes/meme_3.jpg'},
+  	{'name': 'mountain', 'url': 'assets/memes/meme_4.jpg'},
+  	{'name': 'mountain', 'url': 'assets/memes/meme_5.jpg'},
+  	{'name': 'mountain', 'url': 'assets/memes/meme_6.jpg'}
+  ]
   constructor() { }
 
-  ngOnInit() {
+  ngAfterViewInit() {
   	var popup = {
 	  init: function(){
 	    $('figure').click(function(){
